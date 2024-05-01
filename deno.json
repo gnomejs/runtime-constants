@@ -1,0 +1,34 @@
+{
+    "name": "@gnome/runtime-constants",
+    "version": "0.0.0",
+    "exports": "./mod.ts",
+    "compilerOptions": {
+        "lib": ["deno.ns", "deno.unstable", "dom"]
+    },
+    "fmt": {
+        "indentWidth": 4,
+        "useTabs": false,
+        "lineWidth": 120,
+        "exclude": [
+            "*.md"
+        ]
+    },
+    "tasks": {
+        "test": "deno test -A",
+        "coverage": "deno test --coverage=.artifacts/code-coverage -A",
+        "lcov": "deno coverage .artifacts/code-coverage --lcov > .artifacts/code-coverage.lcov"
+    },
+    "lint": {
+        "exclude": [
+            "./scenarios/*.ts"
+        ]
+    },
+    "publish": {
+        "include": [
+            "mod.ts",
+            "README.md",
+            "LICENSE.md",
+            "deno.json"
+        ]
+    }
+}
